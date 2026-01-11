@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | thirtyseven.fragrances</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- Reset & Global ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background: #fdf7f2;
+  color: #2c2c2c;
+}
+
+/* ---------- Quick Nav ---------- */
+.quick-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+  background: #fff9f5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.quick-nav a {
+  text-decoration: none;
+  color: #b86b3f;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.quick-nav a:hover {
+  color: #8c4f2c;
+  transform: scale(1.05);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('about.JPG') no-repeat center center/cover;
+}
+.hero-overlay {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.4);
+}
+.hero-content {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.hero-content h1 span {
+  color: #f4c095;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.hero-content .btn {
+  background: #b86b3f;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.hero-content .btn:hover {
+  background: #8c4f2c;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ---------- About Section ---------- */
+.section-card {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.section-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #b86b3f;
+}
+.section-card p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #b86b3f;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+.btn:hover {
+  background: #8c4f2c;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #fff9f5;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #777;
+}
+</style>
+</head>
+<body>
+
+<div class="quick-nav">
+  <a href="index.html">Home</a>
+  <a href="collections.html">Collections</a>
+  <a href="contact.html">Contact & Review</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>About <span>thirtyseven.fragrances</span></h1>
+    <p>Crafted with soul. Built for identity.</p>
+    <a href="index.html" class="btn">← Back Home</a>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="about">
+  <div class="section-card">
+    <h2>Our Story</h2>
+    <p>
+      thirtyseven.fragrances was born from the idea that fragrance is memory, identity,
+      and confidence bottled into one. Each scent is carefully designed to match
+      different moods, personalities, and moments in life.
+    </p>
+    <p>
+      We believe perfume is not just a product — it is an extension of who you are.
+      That’s why every collection is crafted with intention, emotion, and bold character.
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 thirtyseven.fragrances . All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

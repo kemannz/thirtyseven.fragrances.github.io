@@ -1,0 +1,348 @@
+:root {
+  --bg-main: #fdf7f2;
+  --bg-section: #a7a2a0;
+  --primary: #c07a4a;
+  --text-dark: #2b2b2b;
+  --text-light: #ffffff;
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background: #fdf7f2;   /* primary bg */
+  color: #2c2c2c;        /* text color */
+}
+
+/* ---------- Global & Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fffaf0; /* soft cream background */
+  color: #3a2e2b; /* dark brown text for elegance */
+}
+
+.quick-nav {
+  position: fixed;        /* dia melekat */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 999;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #3a2e2b; /* dark brown */
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;          /* WAJIB sama dengan width */
+  object-fit: cover;      /* crop tengah */
+  border-radius: 50%;
+}
+
+@keyframes logoFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.hero-content h1 span {
+  color: #f4c095;   /* secondary accent */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.hero-content .btn {
+  background: #b86b3f;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  background: #8c4f2c;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ---------- About Section ---------- */
+.about {
+  padding: 80px 10%;
+  text-align: center;
+  color: #3a2e2b;
+  background: #fffaf0;
+}
+
+.section-card {
+  background: rgba(244,212,157,0.2); /* light gold card */
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(58,46,43,0.2);
+  text-align: center;
+}
+
+.section-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #3a2e2b;
+}
+
+.section-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3a2e2b;
+}
+
+.section-card .btn {
+  background: #f4d49d;
+  color: #3a2e2b;
+}
+
+.section-card .btn:hover {
+  background: #e6c17c;
+}
+
+/* ---------- Products Carousel ---------- */
+.products {
+  padding: 80px 10%;
+  background: #fffaf0;
+  color: #3a2e2b;
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  color: #3a2e2b;
+}
+
+.carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  width: max-content;
+}
+
+.perfume-card {
+  flex: 0 0 200px;
+  background: rgba(244,212,157,0.2); /* light gold card */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.perfume-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.perfume-card h3 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
+  color: #3a2e2b;
+  text-transform: uppercase;
+}
+
+.perfume-card .price {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.perfume-card .desc {
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+/* Hover & center glow effect */
+.perfume-card.center, .perfume-card:hover {
+  transform: scale(1.2);
+  box-shadow: 0 20px 40px rgba(244,212,157,0.4); /* gold glow */
+}
+
+/* ---------- Modal ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(58,46,43,0.8); /* dark overlay for contrast */
+}
+
+.modal-content {
+  background: #fffaf0;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  color: #3a2e2b;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #3a2e2b;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ---------- Contact Section ---------- */
+.contact {
+  padding: 80px 10%;
+  text-align: center;
+  background: #fffaf0;
+  color: #3a2e2b;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  margin-bottom: 25px;
+}
+.contact .whatsapp-float {
+  background: #25d366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+}
+
+.contact .whatsapp-float:hover {
+  background: #1ebe5d;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: #fef9f2; /* soft cream */
+  color: #3a2e2b;
+  text-align: center;
+  padding: 20px 10%;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-top: 40px;
+}
+
+/* ---------- Quick Nav ---------- */
+.quick-nav {
+  display: flex; justify-content:center; gap:30px; padding:20px 0; background:#fff9f5; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.quick-nav a { text-decoration:none; color:#b86b3f; font-weight:550; transition:0.3s; }
+.quick-nav a:hover { color:#8c4f2c; transform:scale(1.05); }
+
+

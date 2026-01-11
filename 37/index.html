@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThirtySeven Fragrances</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="quick-nav">
+  <a href="about.html">About</a>
+  <a href="collections.html">Collections</a>
+  <a href="contact.html">Contact & Review</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <video autoplay muted loop class="hero-video">
+    <source src="bgbaru.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="logo.jpg.png" alt="ThirtySeven Logo" class="hero-logo">
+    <h1>thirtyseven fragrances</h1>
+    <p>Crafted with intention, finished with passion.</p>
+    <a href="#products" class="btn">Scent Guide</a>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="about" id="about">
+  <div class="section-card">
+    <h2>“The Art of Scent”</h2>
+    <p>
+      ThirtySeven Fragrances is a distinguished perfume house, embodying sophistication, poise, and the essence of individuality. Each meticulously crafted scent is an olfactory narrative,             evoking emotion and leaving an indelible impression without the need for words.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCTS CAROUSEL -->
+<section class="products" id="products">
+  <h2>Scent Guide</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      
+      <!-- Perfume 1 -->
+      <div class="perfume-card" data-perfume="perfume1">
+        <img src="guide1.PNG" alt="Perfume 1">
+        <h3>"For someone who wants to chase their dreams."</h3>
+        <p class="desc"></p>
+      </div>
+
+      <!-- Perfume 2 -->
+      <div class="perfume-card" data-perfume="perfume2">
+        <img src="guide2.PNG" alt="Perfume 2">
+        <h3>"This perfume is gonna stick in your memory".</h3>
+        <p class="desc"></p>
+      </div>
+
+      <!-- Perfume 3 -->
+      <div class="perfume-card" data-perfume="perfume3">
+        <img src="guide3.PNG" alt="Perfume 3">
+        <h3>"A soft floral fragrance that feels fresh"</h3>
+        <p class="desc"></p>
+      </div>
+
+      <!-- Perfume 4 -->
+      <div class="perfume-card" data-perfume="perfume4">
+        <img src="guide4.PNG" alt="Perfume 4">
+        <h3>"A lively, energetic scent"</h3>
+        <p class="desc"></p>
+      </div>
+
+      <!-- Perfume 5 -->
+      <div class="perfume-card" data-perfume="perfume5">
+        <img src="guide5.PNG" alt="Perfume 5">
+        <h3>"For the main character with dark charm."</h3>
+        <p class="desc"></p>
+      </div>
+
+      <!-- Perfume 6 -->
+      <div class="perfume-card" data-perfume="perfume6">
+        <img src="guide6.PNG" alt="Perfume 6">
+        <h3>"For subtle seduction without trying too hard."</h3>
+        <p class="desc"></p>
+      </div>
+
+      <!-- Perfume 7 -->
+      <div class="perfume-card" data-perfume="perfume7">
+        <img src="guide7.PNG" alt="Perfume 7">
+        <h3>"A scent that turns every moment into a statement."</h3>
+        <p class="desc"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="perfume-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title">Perfume Name</h2>
+    <img id="modal-img" src="" alt="">
+    <p id="modal-price">$XX</p>
+    <p id="modal-desc">Full description here...</p>
+  </div>
+</div>
+
+<section class="contact" id="contact">
+  <div class="section-card">
+    <h2>Our Social Media</h2>
+    <p>Get in touch with us for orders or inquiries.</p>
+<a href="https://beacons.ai/thirtyseven?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleAO3tbpleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeZqFyQnVp0PvG68UYghX6CENBo5R7c7rbYMV4iGw-ICodG2brPsNK8LkozDQ_aem_FXFyPQcQ25JMjBQCK0lGgA" 
+       class="whatsapp-float" 
+       target="_blank">
+       💬
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 thirtyseven.fragrances. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

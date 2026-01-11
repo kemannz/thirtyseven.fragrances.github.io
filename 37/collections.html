@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collections | thirtyseven.fragrances </title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- Reset & Global ---------- */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Montserrat', sans-serif; background:#fdf7f2; color:#0b0b0b; line-height:1.6; }
+
+/* ---------- Quick Nav ---------- */
+.quick-nav {
+  display: flex; justify-content:center; gap:30px; padding:20px 0; background:#fff9f5; box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.quick-nav a { text-decoration:none; color:#b86b3f; font-weight:600; transition:0.3s; }
+.quick-nav a:hover { color:#8c4f2c; transform:scale(1.05); }
+
+/* ---------- Hero ---------- */
+.hero { position:relative; height:700px; display:flex; align-items:center; justify-content:center; text-align:center; background:url('bgcollection.JPG') no-repeat center center/cover; }
+.hero-overlay { position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.4); }
+.hero-content { position:relative; color:#fff; z-index:1; }
+.hero-content h1 { font-family: 'Playfair Display', serif; font-size:3rem; margin-bottom:10px; }
+.hero-content h1 span { color:#f4c095; }
+.hero-content p { font-size:1.2rem; font-weight:300; }
+
+.sold-counter .counter {
+  font-size: 3rem;
+  font-weight: 900; /* super bold */
+  color: #b86b3f;
+  letter-spacing: 1px;
+  
+  /* Breathing animation */
+  animation: breathing 2s ease-in-out infinite;
+  display: inline-block; /* needed for scale animation */
+}
+
+/* Breathing keyframes */
+@keyframes breathing {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); } /* slightly bigger at mid-point */
+}
+
+/* ---------- Collections Grid ---------- */
+.collections { max-width:1200px; margin:60px auto; padding:0 20px; text-align:center; }
+.collections h2 { font-family:'Playfair Display', serif; font-size:2.2rem; margin-bottom:40px; color:#b86b3f; }
+.perfume-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; }
+.perfume-card { background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s,box-shadow 0.3s; cursor:pointer; }
+.perfume-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
+.perfume-card img { width:100%; height:250px; object-fit:cover; }
+.perfume-card h3 { font-family:'Playfair Display', serif; font-size:1.4rem; color:#b86b3f; margin:15px 0 5px; }
+.perfume-card .price { color:#8c4f2c; font-weight:600; }
+.perfume-card .desc { font-size:0.95rem; padding:0 10px 15px; color:#555; }
+
+/* ---------- Modal ---------- */
+.modal { display:none; position:fixed; z-index:999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.7); }
+.modal-content { background:#fff; margin:5% auto; padding:20px; border-radius:15px; max-width:500px; text-align:center; position:relative; }
+.modal-content img { width:100%; height:300px; object-fit:cover; border-radius:10px; margin-bottom:15px; }
+.modal-content h2 { font-family:'Playfair Display', serif; margin:15px 0 5px; color:#b86b3f; }
+.modal-content p { margin:5px 0 15px; color:#444; }
+.close { position:absolute; top:10px; right:15px; font-size:1.5rem; font-weight:bold; color:#333; cursor:pointer; }
+.whatsapp-btn { display:inline-block; margin-top:10px; background:#25d366; color:#fff; padding:10px 20px; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s; }
+.whatsapp-btn:hover { background:#1ebe5d; transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+
+/* ---------- Footer ---------- */
+.footer { background:#fff9f5; text-align:center; padding:20px 0; margin-top:60px; font-size:0.9rem; color:#777; }
+</style>
+</head>
+<body>
+
+<div class="quick-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact & Review</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Our <span>Collection</span></h1>
+    <p>Luxury scents crafted to leave a lasting impression</p>
+  </div>
+</section>
+
+<!-- ---------- SOLD COUNTER ---------- -->
+<section class="sold-counter">
+  <div class="section-card">
+    <h2>Bottles Sold</h2>
+    <p>Our perfumes are loved locally!</p>
+    <div class="counter" data-target="45">0</div>
+  </div>
+</section>
+
+<!-- COLLECTIONS GRID -->
+<section class="collections">
+  <h2>Perfume Lineup</h2>
+  <div class="perfume-grid">
+
+    <!-- Repeated Perfume Cards 1-13 -->
+    <div class="perfume-card" data-title="Horizon" data-price="RM50 ONLY" data-desc="(INSPIRED BY BLEU DE CHANEL)" data-img="perfume1.jpg">
+      <img src="perfume1.jpg" alt="Horizon">
+      <h3>Horizon</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">For someone who wants to break boundaries and chase their dreams.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Eternal" data-price="RM50" data-desc="(INSPIRED BY CK ETERNITY)" data-img="perfume2.jpg">
+      <img src="perfume2.jpg" alt="Eternal">
+      <h3>Eternal</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">This perfume is gonna stick in your memory. I’m not forgettable.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Peony" data-price="RM50" data-desc="(INSPIRED BY CHLOE EDP)" data-img="perfume3.jpg">
+      <img src="perfume3.jpg" alt="Peony">
+      <h3>Peony</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">A soft floral fragrance that feels fresh, romantic, and full of grace.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Fresh Game" data-price="RM50" data-desc="(INSPIRED BY POLO SPORT)" data-img="perfume4.jpg">
+      <img src="perfume4.jpg" alt="Fresh Game">
+      <h3>FRESH GAME</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">A lively, energetic scent made for those who are always ready to win.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Tabac Vanille" data-price="RM50" data-desc="(INSPIRED BY TOM FORD TOBACCO VANILLA)" data-img="perfume5.jpg">
+      <img src="perfume5.jpg" alt="Tabac Vanille">
+      <h3>TABAC VANILLE</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">For the main character with dark charm.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Tonka" data-price="RM50" data-desc="(INSPIRED BY ANGELS' SHARE)" data-img="perfume6.jpg">
+      <img src="perfume6.jpg" alt="Tonka">
+      <h3>TONKA</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">For subtle seduction without trying too hard.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Eclipse" data-price="RM50" data-desc="(INSPIRED BY GUCCI GUILTY)." data-img="perfume7.jpg">
+      <img src="perfume7.jpg" alt="Eclipse">
+      <h3>ECLIPSE</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">Dark and mysterious, a scent that turns every moment into a statement.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Wanted" data-price="RM50" data-desc="(INSPIRED BY AZZARO THE MOST WANTED PARFUM)" data-img="perfume8.jpg">
+      <img src="perfume8.jpg" alt="Wanted">
+      <h3>WANTED</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">Strong, fearless, and irresistible, made for the one who stands out.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Enchanted" data-price="RM50" data-desc="(INSPIRED BY BRITNEY SPEARS FANTASY)" data-img="perfume9.jpg">
+      <img src="perfume9.jpg" alt="Enchanted">
+      <h3>ENCHANTED</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">Magical and dreamy, leaving a trail of sweet wonder wherever you go.</p>
+    </div>
+
+    <div class="perfume-card" data-title="So Sweet" data-price="RM50" data-desc="(INSPIRED BY VICTORIA'S SECRET EAU SO SEXY)" data-img="perfume10.jpg">
+      <img src="perfume10.jpg" alt="So Sweet">
+      <h3>SO SWEET</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">Cute, playful, and sugary, perfect for bright and bubbly personalities.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Ladies" data-price="RM50" data-desc="(INSPIRED BY RALPH LAUREN WOMEN)" data-img="perfume11.jpg">
+      <img src="perfume11.jpg" alt="Ladies">
+      <h3>LADIES</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">Elegant and empowering, celebrating pure feminine strength.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Satin Kiss" data-price="RM50" data-desc="(INSPIRED BY 212 SEXY BY CAROLINA HERRERA)" data-img="perfume12.jpg">
+      <img src="perfume12.jpg" alt="Satin Kiss">
+      <h3>SATIN KISS</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">Silky, flirty, and intimate, a scent that invites you closer.</p>
+    </div>
+
+    <div class="perfume-card" data-title="Desire" data-price="RM50" data-desc="(INSPIRED BY CREED AVENTUS)" data-img="perfume13.jpg">
+      <img src="perfume13.jpg" alt="Desire">
+      <h3>DESIRE</h3>
+      <p class="price">CLICK HERE TO PURCHASE</p>
+      <p class="desc">Passionate and seductive, designed for unforgettable nights.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="perfume-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title">Perfume Name</h2>
+    <img id="modal-img" src="" alt="">
+    <p id="modal-price">RM50</p>
+    <p id="modal-desc">Full description here...</p>
+    <a id="modal-whatsapp" class="whatsapp-btn" href="#" target="_blank">💬 Order Here</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2025 thirtyseven.fragrances . All Rights Reserved.</p>
+</footer>
+
+<script>
+// JS for modal + WhatsApp
+const modal = document.getElementById("perfume-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalImg = document.getElementById("modal-img");
+const modalPrice = document.getElementById("modal-price");
+const modalDesc = document.getElementById("modal-desc");
+const modalWhats = document.getElementById("modal-whatsapp");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".perfume-card").forEach(card => {
+  card.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalTitle.textContent = card.dataset.title;
+    modalImg.src = card.dataset.img;
+    modalPrice.textContent = card.dataset.price;
+    modalDesc.textContent = card.dataset.desc;
+
+    // WhatsApp link pre-filled
+    const phone = "60199294636"; // replace with your WhatsApp number
+    const message = `SAYA NAK PURCHASE ${card.dataset.title}`;
+    modalWhats.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  });
+});
+
+// ---------- ANIMATED COUNTER ----------
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const speed = 200; // higher = slower
+    const increment = Math.ceil(target / speed);
+
+    if(count < target) {
+      counter.innerText = count + increment;
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = target;
+    }
+  }
+
+  // Start counting when the section is visible
+  const observer = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting){
+      updateCount();
+      observer.unobserve(counter);
+    }
+  }, {threshold: 0.5});
+
+  observer.observe(counter);
+});
+
+closeBtn.addEventListener("click", () => { modal.style.display = "none"; });
+window.addEventListener("click", e => { if(e.target==modal) modal.style.display="none"; });
+</script>
+
+</body>
+</html>
